@@ -8,13 +8,13 @@
 Summary:	File::Rsync - a wrapper module for rsync
 Summary(pl):	File::Rsync - wrapper dla programu rsync
 Name:		perl-File-Rsync
-Version:	0.34
+Version:	0.35
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	06b2f134c4d3aa134d3813b7c1c538f1
+# Source0-md5:	2b7003c1e54aecc4a53a25b6ce282ce1
 Patch0:		%{name}-misc.patch
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
