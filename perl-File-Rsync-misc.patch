@@ -1,0 +1,39 @@
+--- File-Rsync-0.32.old/Makefile.PL	2001-05-17 03:32:19.000000000 +0200
++++ File-Rsync-0.32/Makefile.PL	2004-01-01 19:42:50.659170040 +0100
+@@ -18,7 +18,7 @@
+       ABSTRACT       => $ABSTRACT,
+       PL_FILES       => { 'makepm.PL' => 'Config.pm' },
+       PM             => { 'Rsync.pm'  => '$(INST_LIB)/File/Rsync.pm',
+-     			  'Config.pm' => '$(INST_ARCHLIB)/File/Rsync/Config.pm' },
++     			  'Config.pm' => '$(INST_LIB)/File/Rsync/Config.pm' },
+       dist           => { COMPRESS => 'gzip', SUFFIX => 'gz' },
+       realclean      => { FILES => 'Config.pm' },
+ );
+--- File-Rsync-0.32.old/makepm.PL	2001-05-11 05:12:17.000000000 +0200
++++ File-Rsync-0.32/makepm.PL	2004-01-01 19:37:09.339058584 +0100
+@@ -20,11 +20,7 @@
+ (this is not recommended)).
+ 
+ EOT
+-$RSYNC||='/usr/local/bin/rsync';
+-print "Path to rsync [$RSYNC]: ";
+-my $ans=<STDIN>;
+-chomp $ans;
+-$RSYNC=$ans || $RSYNC;
++$RSYNC||='/usr/bin/rsync';
+ $RSYNC=~s/\\/\\\\/g;
+ $RSYNC=~s/\'/\\\'/g;
+ open IN,'Config.in' or die "Cannot read Config.in: $!\n";
+--- File-Rsync-0.32.old/Rsync.pm	2003-12-27 03:43:12.000000000 +0100
++++ File-Rsync-0.32/Rsync.pm	2004-01-01 19:37:48.858050784 +0100
+@@ -35,8 +35,8 @@
+ use File::Rsync;
+ 
+ $obj = File::Rsync->new( { archive => 1, compress => 1,
+-         rsh => '/usr/local/bin/ssh',
+-         'rsync-path' => '/usr/local/bin/rsync' } );
++         rsh => '/usr/bin/ssh',
++         'rsync-path' => '/usr/bin/rsync' } );
+ 
+ $obj->exec( { src => 'localdir', dest => 'rhost:remdir' } )
+          or warn "rsync failed\n";
