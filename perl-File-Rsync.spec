@@ -7,7 +7,7 @@
 %define	pnam	Rsync
 Summary:	File::Rsync - a wrapper module for rsync
 Summary(pl):	File::Rsync - wrapper dla programu rsync
-Name:		perl-%{pdir}-%{pnam}
+Name:		perl-File-Rsync
 Version:	0.32
 Release:	1
 # same as perl
