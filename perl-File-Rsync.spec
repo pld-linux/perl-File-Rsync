@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	File
-%define	pnam	Rsync
+%define		pdir	File
+%define		pnam	Rsync
 Summary:	File::Rsync - a wrapper module for rsync
 Summary(pl):	File::Rsync - wrapper dla programu rsync
 Name:		perl-File-Rsync
