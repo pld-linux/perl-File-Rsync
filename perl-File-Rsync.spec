@@ -10,7 +10,8 @@ Summary(pl):	File::Rsync - wrapper dla programu rsync
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.32
 Release:	1
-License:	GPL/Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	171e3626d928d08d58c83a3fe6928bc3
@@ -25,10 +26,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-File::Rsync is a perl wrapper for the rsync program.
+File::Rsync is a Perl wrapper for the rsync program.
 
 %description -l pl
-File::Rsync jest wrapperem w perlu dla programu rsync.
+File::Rsync jest wrapperem w Perlu dla programu rsync.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
