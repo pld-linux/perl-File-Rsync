@@ -33,7 +33,7 @@ File::Rsync jest wrapperem w Perlu dla programu rsync.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch -p1
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
