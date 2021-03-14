@@ -7,18 +7,21 @@
 Summary:	File::Rsync - a wrapper module for rsync
 Summary(pl.UTF-8):	File::Rsync - wrapper dla programu rsync
 Name:		perl-File-Rsync
-Version:	0.43
+Version:	0.49
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	fe745f0460454250bc4ed557de8f11ac
-Patch0:		%{name}-misc.patch
-URL:		http://search.cpan.org/dist/File-Rsync/
+# Source0-md5:	3929283d5391b6599799072c34a9e93e
+URL:		https://metacpan.org/release/File-Rsync
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
+BuildRequires:	perl-IPC-Run3
+BuildRequires:	perl-Scalar-List-Utils
+BuildRequires:	perl-Test-Simple
 BuildRequires:	rsync
 %endif
 Requires:	rsync
@@ -33,7 +36,6 @@ File::Rsync jest wrapperem w Perlu dla programu rsync.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
@@ -56,7 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changelog README
 %{perl_vendorlib}/File/Rsync.pm
-%dir %{perl_vendorlib}/File/Rsync
-%{perl_vendorlib}/File/Rsync/Config.pm
-%{_mandir}/man3/File::Rsync.*
-%{_mandir}/man3/File::Config.*
+%{_mandir}/man3/File::Rsync.3pm*
